@@ -1,0 +1,60 @@
+{
+  "Room 1": {
+    "users": [
+      {
+        "id": "weh3c4M0V7fgp2vtAAAB",
+        "name": "Anna"
+      },
+      {
+        "id": "NNJN5awcZT256sStAAAD",
+        "name": "Dev"
+      }
+    ],
+    "messages": [
+      {
+        "user": "Dev",
+        "message": "Hey"
+      },
+      {
+        "user": "Dev",
+        "message": "Hi Anna"
+      },
+      {
+        "user": "Dev",
+        "message": "👋"
+      },
+      {
+        "user": "Anna",
+        "message": "Hello dev"
+      },
+      {
+        "user": "Anna",
+        "message": "Sup?"
+      },
+      {
+        "user": "Dev",
+        "message": "Good ..u?"
+      },
+      {
+        "user": "Anna",
+        "message": "Fine"
+      },
+      {
+        "user": "Dev",
+        "message": "🤩"
+      },
+      {
+        "user": "Anna",
+        "message": "😃"
+      }
+    ]
+  },
+  "Room2": {
+    "users": [],
+    "messages": []
+  },
+  "room3": {
+    "users": [],
+    "messages": []
+  }
+}

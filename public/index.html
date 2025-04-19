@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real-Time Chat App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Auth Container -->
+  <div id="authContainer" class="auth-container">
+    <!-- Login Form -->
+    <div id="loginForm" class="auth-form">
+      <h2>Login</h2>
+      <input type="text" id="loginUsername" placeholder="Username">
+      <input type="password" id="loginPassword" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <p>Don't have an account? <a href="#" onclick="toggleAuth('signup')">Sign Up</a></p>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signupForm" class="auth-form" style="display: none;">
+      <h2>Sign Up</h2>
+      <input type="text" id="signupUsername" placeholder="Username">
+      <input type="password" id="signupPassword" placeholder="Password">
+      <input type="password" id="confirmPassword" placeholder="Confirm Password">
+      <button onclick="signup()">Sign Up</button>
+      <p>Already have an account? <a href="#" onclick="toggleAuth('login')">Login</a></p>
+    </div>
+  </div>
+
+  <!-- Room List Container -->
+  <div id="roomListContainer" class="room-list-container" style="display: none;">
+    <div class="room-list-header">
+      <h2>Welcome, <span id="userDisplayName"></span>!</h2>
+      <button onclick="logout()" class="logout-btn">Logout</button>
+    </div>
+    
+    <div class="create-room-section">
+      <input type="text" id="newRoomInput" placeholder="Enter new room name">
+      <button onclick="createRoom()">Create Room</button>
+    </div>
+
+    <div class="room-list">
+      <h3>Available Rooms</h3>
+      <div id="roomList" class="room-grid"></div>
+    </div>
+  </div>
+
+  <!-- Chat Container -->
+  <div id="chatContainer" class="chat-wrapper" style="display: none;">
+    <div id="roomAndUserList">
+      <div class="room-header">
+        <h3>Room: <span id="currentRoom"></span></h3>
+        <button onclick="leaveRoom()" class="leave-room-btn">Leave Room</button>
+      </div>
+      <h4>Users:</h4>
+      <ul id="userList"></ul>
+    </div>
+
+    <div id="messages" class="messages-box"></div>
+
+    <!-- Chat input section pinned to bottom -->
+    <div class="input-section">
+      <input type="text" id="messageInput" placeholder="Type a message..." />
+      <button onclick="openEmojiPicker()">😊</button>
+      <div id="emojiPicker" style="display: none;"></div>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- Socket.IO client script (required) -->
+  <script src="http://localhost:4001/socket.io/socket.io.js"></script>
+
+  <!-- Your custom chat logic -->
+  <script src="script.js"></script>
+</body>
+</html>
